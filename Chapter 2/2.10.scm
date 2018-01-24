@@ -1,0 +1,7 @@
+(define (div-interval x y)
+  (let ((upper (/ 1.0 (upper-bound y)))
+        (lower (/ 1.0 (lower-bound y))))
+    (if (not (= upper lower))
+             (mul-interval x (make-interval (/ 1.0 upper)
+                                             (/ 1.0 lower)))
+        (display "Error. Interval span is zero."))))
